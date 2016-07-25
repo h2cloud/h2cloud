@@ -1,0 +1,10 @@
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 1 10000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 10000 20000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 20000 30000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 30000 40000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 40000 50000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 50000 60000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 60000 70000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 70000 80000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 80000 90000 &
+node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 90000 100000 &

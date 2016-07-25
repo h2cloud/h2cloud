@@ -1,0 +1,10 @@
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 1 10000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 10000 20000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 20000 30000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 30000 40000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 40000 50000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 50000 60000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 60000 70000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 70000 80000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 80000 90000
+start /b node copier ct-100K /testenv/maindir/obj /testenv/mm19/xml 90000 100000

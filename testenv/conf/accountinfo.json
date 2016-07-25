@@ -1,0 +1,18 @@
+/* Configure file for Swift Layer-C, specifying accout data to connect Swift
+**
+** Note that all the comments are macro-ed and will be removed
+** before JSON parse. So it is totally used for comments, and has no
+** effect on the configure value itself.
+**
+** DO NOT remove any property, otherwise it may cause the crackdown of
+** the whole program. If default values need to be set, just leave it
+** as its original value.
+**/
+
+{
+    "keystone_username": "USER_NAME",
+
+    "keystone_password": "PASSWD",
+
+    "keystone_tenant": "TENAT_NAME"
+}

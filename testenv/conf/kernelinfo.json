@@ -1,0 +1,66 @@
+/* Configure file for Swift Layer-C.
+**
+** Note that all the comments are macro-ed and will be removed
+** before JSON parse. So it is totally used for comments, and has no
+** effect on the configure value itself.
+**
+** DO NOT remove any property, otherwise it may cause the crackdown of
+** the whole program. If default values need to be set, just leave it
+** as its original value.
+**/
+
+{
+    /*  If set to TRUE, mem-get operation (like index-io) will check MD5 to ensure
+        integrity  */
+    "index_file_check_md5": false,
+
+    /*  How many threads is used to run the layer. A number approximate to the number
+        of logical cores is recommended to take full advantage of multi-core. If the
+        value is less than or equal to zero, it will be set to the number of logical
+        cores automatically.  */
+    "thread_utilised": 2,
+
+    /*  For the automerger worker, after executing merging for this number of times
+        it will commit the merged file to write it back to Swift.  */
+    "auto_commit_per_intramerge": 100,
+
+    /*  If a read request for one fd is no later than single_file_sync_interval_min_in_second
+        seconds after the last sync operation, the sync will be cancelled and cached
+        version will be retured. */
+    "single_file_sync_interval_min_in_second": 60,
+
+
+    "trial_interval_in_unrevocable_io_error_in_ms": 1000,
+
+
+    /*  =================== FOR FILEHANDLER POOL =================== */
+
+    "max_number_of_cached_active_fd": 100,
+    "max_number_of_cached_dormant_fd": 1000,
+
+    /*  Attention: the total-active value indicates the capacity of holded fds ( active for reader-holded and
+        dormant for total-holded ). When holded fds are too many, cached fds will not get wiped by force. So
+        avoid setting the delta too small. */
+    "max_number_of_total_active_fd": 3000,  /* NOT IMPLEMENTED YET */
+    "max_number_of_total_dormant_fd": 2000000,
+
+    /*  =================== END FILEHANDLER POOL =================== */
+
+
+
+    /*  =================== FOR AUTOMERGER =================== */
+
+    /*  The capacity of merger task queue. If overwhelmed, any new task will get
+        put off unless worker has accomplished some. */
+    "auto_merger_task_queue_capacity": 100000,
+
+    /*  The max number of merging goroutines. When unreached, any new task will be
+        assigned to a new worker. */
+    "max_merging_worker": 100,
+
+    /*  After encountering an error or finishing a merging work, a working will
+        rest in rest_interval_of_worker_in_ms milliseconds. */
+    "rest_interval_of_worker_in_ms": 0
+
+    /*  =================== END AUTOMERGER =================== */
+}

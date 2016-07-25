@@ -1,0 +1,63 @@
+/* Configure file for Swift Layer-C.
+**
+** Note that all the comments are macro-ed and will be removed
+** before JSON parse. So it is totally used for comments, and has no
+** effect on the configure value itself.
+**
+** DO NOT remove any property, otherwise it may cause the crackdown of
+** the whole program. If default values need to be set, just leave it
+** as its original value.
+**/
+
+{
+    /*  The number id of this proxy node. Keep unique in the cluster and is numbered
+        in the range [0, node_nums_in_all-1].  */
+    "node_number": 0,
+
+    /*  The total number of proxy nodes in the cluster.  */
+    "node_nums_in_all": 2,
+
+    /*  Openstack Keystone authencation server url. Only API v2.0 is supported here.  */
+    "swift_auth_url": "http://58.205.208.81:5000/v2.0",
+
+    /*  Corresponding Openstack Swift proxy API url. One per one proxy node.  */
+    "swift_proxy_url": "http://58.205.208.81:8080/v1/",
+
+    /*  To which([hostname]:port) the outer server listens */
+    "outer_service_listener": ":9144",
+
+    /*  To which([hostname]:port) the intra-communication server listens */
+    "inner_service_listener": ":2333",
+
+    /*  The order must be consistent to node number assignment.*/
+    "cluster_inner_services_addr_list": [null, "controller:2333"],
+
+    /*  Leave the user field empty means no auth for admin. */
+    "inner_service_admin_user": "levy",
+    "inner_service_admin_password": "admin",
+    "inner_service_admin_refresh_frequency_in_second": 1,
+
+    /*
+        log_level is a three digit binary b2b1b0:
+        b2 set to 1 enables info log
+        b1 set to 1 enables warning
+        b0 set to 1 enables error
+        the larger the value is, the more verbose logger will be
+    */
+    "log_level": 7,
+
+    /*  the number of logs in each level that can be cached. Zero or negative value
+        disable log caching and thus inpsection online will be disabled. */
+    "cached_log_capacity": 0,
+
+    /*  <=0 for no heart beat. */
+    "heartbeat_ping_interval_in_ms": 10000,
+
+    /*  =================== FOR GOSSIP PROTOCOL =================== */
+    "gossip_period_in_ms": 500,
+    "gossip_buffer_size": 1000,
+    "gossip_retell_times": 2,
+    "gossip_max_delivered_in_one_tick": 1000,
+    "gossip_max_telling_in_one_tick": 2
+    /*  =================== END GOSSIP PROTOCOL =================== */
+}

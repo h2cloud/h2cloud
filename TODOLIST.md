@@ -1,0 +1,49 @@
+## Kick off S-H2
+
+- [x] Improve configure read process
+- [x] modify the way to access files
+- [ ] add inter-communication mechanism
+- [ ] Consider reconstruct kvmap to allow fast access to timestamp
+- [x] Add auto mergenext
+- [ ] Prepare to auto-fix folders that have not got a proper ../.
+- [ ] Consider modify Fs.Put() So that existing file could be removed
+- [x] Set up auto invocation of task CHECK-IN
+- [x] Set up logging level
+- [x] Multi-routine fs functions
+- [x] Set default file name and extension
+- [ ] user meta support
+- [x] **DO NEVER USE UPPER CASE FOR FILE META!!!**
+- [x] Take advantage of Parent-Node meta to implement shortcut remove
+- [x] Implement MOVE
+- [x] Test MOVE
+- [x] Implement parallel Sync
+- [x] Implement parallel Put
+- [x] Check parallelbility of outapi/fd operators
+- [x] Linux test
+- [ ] Handle submission gap
+- [ ] Pressure test
+- [ ] Dynamic setting for ls interval
+- [x] Configuration value validation
+- [x] Optimize trashbox position cache
+- [x] Check Concurrency safety
+- [x] For format filesystem, consider put a global lock to ensure its uniqueness
+- [ ] Ensure uniqueness for container creation
+- [x] Add file information for list elements
+- [ ] Copy necessary user-defined headers
+- [ ] Setup a faster MvXParalleled()
+- [x] Return meta in GET
+- [x] Maintain live inspection console
+- [ ] global lock for auto trashbox maintainance
+- [-] Writeback in force exit
+- [ ] Implement faster merging worker by co-routine
+- [x] Implement gossip
+- [ ] Introduce live node adding
+- [x] Push gossiped merging task to queue
+- [-] Check all the go-ed funcs to avoid fdPool mis-release
+
+## Known Bugs
+- [ ] InApi: use constant rootNode instead of filesystem one
+- [x] kernel/distributedvc::Fd: resolving no-zero-patch conflict
+- [ ] kernel/filesystem::Fs.MvX: Modifying the header ORIGINAL_NAME of the object
+- [x] the trigger of merging after submission
+- [ ] the background re-submission may lead to incosistence between fd-nodes in trash and fd-nodes in fdPool
