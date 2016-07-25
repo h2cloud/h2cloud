@@ -1,12 +1,12 @@
-# Metaless H2
-The Golang version of Swift Layer-C, which has been renamed to Metaless H2
+# H2Cloud
+H2Cloud provides cloud storage service on OpenStack Swift, while maintaining whole filesystem on a single object storage cloud and enabling efficient filesystem operations.
 
 Dependencies:
 
 - [github.com/ncw/swift](https://github.com/ncw/swift)
 - [github.com/levythu/gurgling](https://github.com/levythu/gurgling)
 
-**Attention: Currently the dependency github.com/ncw/swift is replaced by my forked
+**Attention: Currently the dependency github.com/ncw/swift is replaced by forked
 version: levythu/gurgling. As a result, you cannot use `introducedependencies.sh` to
 install it but use this instead:** (With environment variables set using `setenv`)
 
